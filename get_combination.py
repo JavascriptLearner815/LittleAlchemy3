@@ -28,14 +28,81 @@ def get_combination(items: list):
     if items[0] == "air" and items[1] == "air":
       return "atmosphere"
 
-
-    if items[0] == "earth" and items[1] == "fire" or items[0] == "fire" and items[1] == "earth":
+    x = [{"earth", "fire"}]
+    if {items[0],items[1]} in x:
       return "magma"
 
-    if items[0] == "magma" and items[1] == "air" or items[0] == "air" and items[1] == "magma":
+    x = [{"magma", "air"}]
+    if {items[0],items[1]} in x:
       return ["lava", "smoke"]
 
-    if items[0] == "fire" and items[1] == "air" or items[0] == "air" and items[1] == "fire":
+    x = [{"fire", "air"}]
+    if {items[0],items[1]} in x:
       return "smoke"
+
+    x = [{"fire", "water"}]
+    if {items[0],items[1]} in x:
+      return ["obsidian", "steam"]
+
+    x = ([
+      {"fire", "planet"},
+      {"light", "planet"},
+      {"energy", "planet"},
+      {"fire", "star"},
+      {"light", "star"},
+      {"energy", "star"},
+      {"fire", "philosophy"},
+      {"light", "philosophy"},
+      {"energy", "philosophy"}
+    ])
+    if {items[0],items[1]} in x:
+      return "sun"
+
+    x = [{"philosophy", "sun"}]
+    if {items[0],items[1]} in x:
+      return "day"
+
+    
+    if items[0] == "earth" and items[1] == "earth":
+      return "land"
+
+    x = ([
+      {"land", "ocean"},
+      {"land", "sea"},
+      {"land", "lake"},
+      {"land", "river"}
+    ])
+    if {items[0],items[1]} in x:
+      return "island"
+
+    if items[0] == "water" and items[1] == "water":
+      return "puddle"
+
+    if items[0] == "puddle" and items[1] == "puddle":
+      return "pond"
+
+    if items[0] == "pond" and items[1] == "pond":
+      return "lake"
+
+    if items[0] == "lake" and items[1] == "lake":
+      return "sea"
+
+    if items[0] == "sea" and items[1] == "sea":
+      return "ocean"
+
+    if items[0] == "ocean" and items[1] == "ocean":
+      return ["earth's water", "pressure"]
+
+    x = [{"earth's water", "atmosphere"}]
+    if {items[0],items[1]} in x:
+      return "primordial soup"
+
+    x = [{"energy", "primordial soup"}, {"philosophy", "primordial soup"}]
+    if {items[0],items[1]} in x:
+      return "life"
+
+  
+    if items[0] == "philosophy" and items[1] == "philosophy":
+      return "idea"
   else:
     raise ValueError("A combination must be made out of exactly 2 items")
