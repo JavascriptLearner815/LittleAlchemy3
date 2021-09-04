@@ -34,5 +34,8 @@ def get_combination(items: list):
 
     if items[0] == "magma" and items[1] == "air" or items[0] == "air" and items[1] == "magma":
       return ["lava", "smoke"]
+
+    if items[0] == "fire" and items[1] == "air" or items[0] == "air" and items[1] == "fire":
+      return "smoke"
   else:
     raise ValueError("A combination must be made out of exactly 2 items")
