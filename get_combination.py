@@ -36,6 +36,14 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return ["lava", "smoke"]
 
+    x = [{"lava", "earth"}]
+    if {items[0],items[1]} in x:
+      return "volcano"
+
+    x = [{"volcano", "pressure"}, {"volcano", "energy"}]
+    if {items[0],items[1]} in x:
+      return ["eruption", "energy"]
+
     x = [{"fire", "air"}]
     if {items[0],items[1]} in x:
       return "smoke"
