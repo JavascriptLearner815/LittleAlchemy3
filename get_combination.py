@@ -28,58 +28,51 @@ def get_combination(items: list):
     if items[0] == "air" and items[1] == "air":
       return "atmosphere"
 
-
-    if items[0] == "earth" and items[1] == "fire" or items[0] == "fire" and items[1] == "earth":
+    x = {{"earth", "fire"}}
+    if {items[0],items[1]} in x:
       return "magma"
 
-    if items[0] == "magma" and items[1] == "air" or items[0] == "air" and items[1] == "magma":
+    x = {{"magma", "air"}}
+    if {items[0],items[1]} in x:
       return ["lava", "smoke"]
 
-    if items[0] == "fire" and items[1] == "air" or items[0] == "air" and items[1] == "fire":
+    x = {{"fire", "air"}}
+    if {items[0],items[1]} in x:
       return "smoke"
 
-    if items[0] == "fire" and items[1] == "water" or items[0] == "water" and items[1] == "fire":
+    x = {{"fire", "water"}}
+    if {items[0],items[1]} in x:
       return ["obsidian", "steam"]
 
-    if (
-      items[0] == "fire" and items[1] == "planet"
-      or items[0] == "light" and items[1] == "planet"
-      or items[0] == "energy" and items[1] == "planet"
-      or items[0] == "fire" and items[1] == "star"
-      or items[0] == "light" and items[1] == "star"
-      or items[0] == "energy" and items[1] == "star"
-      or items[0] == "planet" and items[1] == "fire"
-      or items[0] == "planet" and items[1] == "light"
-      or items[0] == "planet" and items[1] == "energy"
-      or items[0] == "star" and items[1] == "fire"
-      or items[0] == "star" and items[1] == "light"
-      or items[0] == "star" and items[1] == "energy"
-      or items[0] == "fire" and items[1] == "philosophy"
-      or items[0] == "light" and items[1] == "philosophy"
-      or items[0] == "energy" and items[1] == "philosophy"
-      or items[0] == "philosophy" and items[1] == "fire"
-      or items[0] == "philosophy" and items[1] == "light"
-      or items[0] == "philosophy" and items[1] == "energy"
-    ):
+    x = ({
+      {"fire", "planet"},
+      {"light", "planet"},
+      {"energy", "planet"},
+      {"fire", "star"},
+      {"light", "star"},
+      {"energy", "star"},
+      {"fire", "philosophy"},
+      {"light", "philosophy"},
+      {"energy", "philosophy"}
+    })
+    if {items[0],items[1]} in x:
       return "sun"
 
-    if items[0] == "philosophy" and items[1] == "sun" or items[0] == "sun" and items[1] == "philosophy":
+    x = {{"philosophy", "sun"}}
+    if {items[0],items[1]} in x:
       return "day"
 
     
     if items[0] == "earth" and items[1] == "earth":
       return "land"
 
-    if (
-      items[0] == "land" and items[1] == "ocean"
-      or items[0] == "land" and items[1] == "sea"
-      or items[0] == "land" and items[1] == "lake"
-      or items[0] == "land" and items[1] == "river"
-      or items[0] == "ocean" and items[1] == "land"
-      or items[0] == "sea" and items[1] == "land"
-      or items[0] == "lake" and items[1] == "land"
-      or items[0] == "river" and items[1] == "land"
-    ):
+    x = ({
+      {"land", "ocean"},
+      {"land", "sea"},
+      {"land", "lake"},
+      {"land", "river"}
+    })
+    if {items[0],items[1]} in x:
       return "island"
 
     if items[0] == "water" and items[1] == "water":
@@ -100,18 +93,15 @@ def get_combination(items: list):
     if items[0] == "ocean" and items[1] == "ocean":
       return ["earth's water", "pressure"]
 
-    if items[0] == "earth's water" and items[1] == "atmosphere" or items[0] == "atmosphere" and items[1] == "earth's water":
+    x = {{"earth's water", "atmosphere"}}
+    if {items[0],items[1]} in x:
       return "primordial soup"
 
-    if (
-      items[0] == "energy" and items[1] == "primordial soup"
-      or items[0] == "philosophy" and items[1] == "primordial soup"
-      or items[0] == "primordial soup" and items[1] == "energy"
-      or items[0] == "primordial soup" and items[1] == "philosophy"
-    ):
+    x = {{"energy", "primordial soup"}, {"philosophy", "primordial soup"}}
+    if {items[0],items[1]} in x:
       return "life"
 
-    
+  
     if items[0] == "philosophy" and items[1] == "philosophy":
       return "idea"
   else:
