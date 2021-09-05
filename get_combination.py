@@ -55,6 +55,10 @@ def get_combination(items: list):
     if items[0] == "fire" and items[1] == "fire":
       return "heat"
 
+    x = [{"sun", "land"}]
+    if {items[0],items[1]} in x:
+      return "light"
+
     x = ([
       {"fire", "planet"},
       {"light", "planet"},
@@ -76,6 +80,34 @@ def get_combination(items: list):
     
     if items[0] == "earth" and items[1] == "earth":
       return "land"
+
+    if items[0] == "land" and items[1] == "land":
+      return "continent"
+
+    if items[0] == "continent" and items[1] == "continent":
+      return "planet"
+
+    x = [{"sun", "planet"}]
+    if {items[0],items[1]}:
+      return "solar system"
+
+    if items[0] == "solar system" and items[1] == "solar system":
+      return "galaxy"
+
+    if items[0] == "galaxy" and items[1] == "galaxy":
+      return "galplex"
+
+    if items[0] == "galplex" and items[1] == "galplex":
+      return "galaxy cluster"
+
+    if items[0] == "galaxy cluster" and items[1] == "galaxy cluster":
+      return "universe"
+
+    if items[0] == "universe" and items[1] == "universe":
+      return "multiverse"
+
+    if items[0] == "multiverse" and items[1] == "multiverse":
+      return "dark matter"
 
     x = [{"earth", "pressure"}]
     if {items[0],items[1]} in x:
