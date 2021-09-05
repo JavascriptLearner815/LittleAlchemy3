@@ -42,7 +42,9 @@ def get_combination(items: list):
 
     x = [{"volcano", "pressure"}, {"volcano", "energy"}]
     if {items[0],items[1]} in x:
-      return ["eruption", "lava", "obsidian", "energy"]
+      return ["eruption", "lava", "obsidian"
+      # , "energy"
+      ]
 
     x = [{"fire", "air"}]
     if {items[0],items[1]} in x:
@@ -223,5 +225,18 @@ def get_combination(items: list):
     x = [{"idea", "book"}]
     if {items[0],items[1]} in x:
       return ["philosophy", "philosophy"]
+
+    x = [{"life", "philosophy"}]
+    if {items[0],items[1]} in x:
+      return ["energy", "universe"]
+
+
+    x = [{"life", "time"}]
+    if {items[0],items[1]} in x:
+      return ["human", "civilization"]
+
+    x = [{"seed", "time"}]
+    if {items[0],items[1]} in x:
+      return "tree"
   else:
     raise ValueError("A combination must be made out of exactly 2 items")
