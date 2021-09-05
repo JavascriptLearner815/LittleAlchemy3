@@ -174,7 +174,7 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "book"
 
-    x = [{"book", "day"}]
+    x = [{"book", "day"}, {"egg", "chicken"}]
     if {items[0],items[1]} in x:
       return "philosophy"
 
