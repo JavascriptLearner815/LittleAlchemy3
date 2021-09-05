@@ -88,7 +88,7 @@ def get_combination(items: list):
       return "planet"
 
     x = [{"sun", "planet"}]
-    if {items[0],items[1]}:
+    if {items[0],items[1]} in x:
       return "solar system"
 
     if items[0] == "solar system" and items[1] == "solar system":
@@ -219,5 +219,9 @@ def get_combination(items: list):
   
     if items[0] == "philosophy" and items[1] == "philosophy":
       return "idea"
+
+    x = [{"idea", "book"}]
+    if {items[0],items[1]} in x:
+      return ["philosophy", "philosophy"]
   else:
     raise ValueError("A combination must be made out of exactly 2 items")
