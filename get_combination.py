@@ -63,14 +63,17 @@ def get_combination(items: list):
 
     x = ([
       {"fire", "planet"},
+      {"heat", "planet"},
       {"light", "planet"},
       {"energy", "planet"},
       {"fire", "star"},
       {"light", "star"},
       {"energy", "star"},
+      {"heat", "star"},
       {"fire", "philosophy"},
       {"light", "philosophy"},
-      {"energy", "philosophy"}
+      {"energy", "philosophy"},
+      {"heat", "philosophy"}
     ])
     if {items[0],items[1]} in x:
       return "sun"
@@ -145,7 +148,7 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "seedling"
 
-    x = [{"day", "sprout"}]
+    x = [{"day", "seedling"}]
     if {items[0],items[1]} in x:
       return "plant"
 
