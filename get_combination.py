@@ -52,6 +52,9 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return ["obsidian", "steam"]
 
+    if items[0] == "fire" and items[1] == "fire":
+      return "heat"
+
     x = ([
       {"fire", "planet"},
       {"light", "planet"},
@@ -66,13 +69,85 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "sun"
 
-    x = [{"philosophy", "sun"}]
+    x = [{"philosophy", "sun"}, {"light", "sun"}]
     if {items[0],items[1]} in x:
       return "day"
 
     
     if items[0] == "earth" and items[1] == "earth":
       return "land"
+
+    x = [{"earth", "pressure"}]
+    if {items[0],items[1]} in x:
+      return "stone"
+
+    x = [{"heat", "stone"}]
+    if {items[0],items[1]} in x:
+      return "metal"
+
+    if items[0] == "metal" and items[1] == "metal":
+      return "blade"
+
+    x = [{"earth", "air"}]
+    if {items[0],items[1]} in x:
+      return "dust"
+
+    if items[0] == "dust" and items[1] == "dust":
+      return "dust bunny"
+
+    x = [{"dust bunny", "earth"}]
+    if {items[0],items[1]} in x:
+      return "pollen"
+
+    x = [{"pollen", "earth"}]
+    if {items[0],items[1]} in x:
+      return "seed"
+
+    x = [{"day", "seed"}]
+    if {items[0],items[1]} in x:
+      return "sprout"
+
+    x = [{"day", "sprout"}]
+    if {items[0],items[1]} in x:
+      return "seedling"
+
+    x = [{"day", "sprout"}]
+    if {items[0],items[1]} in x:
+      return "plant"
+
+    x = [{"day", "plant"}]
+    if {items[0],items[1]} in x:
+      return "tree sprout"
+
+    if items[0] == "tree sprout" and items[1] == "tree sprout":
+      return "sapling"
+
+    if items[0] == "sapling" and items[1] == "sapling":
+      return "tree growth"
+
+    if items[0] == "tree growth" and items[1] == "tree growth":
+      return "tree"
+
+    x = [{"blade", "tree"}]
+    if {items[0],items[1]} in x:
+      return "wood"
+
+    x = [{"wood", "pressure"}]
+    if {items[0],items[1]} in x:
+      return "paper"
+
+    x = [{"paper", "wood"}]
+    if {items[0],items[1]} in x:
+      return "book"
+
+    x = [{"book", "day"}]
+    if {items[0],items[1]} in x:
+      return "philosophy"
+
+    x = [{"tree", "philosophy"}]
+    if {items[0],items[1]} in x:
+      return "time"
+
 
     x = ([
       {"land", "ocean"},
