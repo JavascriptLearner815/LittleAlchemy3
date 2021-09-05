@@ -122,6 +122,10 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "metal"
 
+    x = [{"metal", "air"}]
+    if {items[0],items[1]} in x:
+      return "rust"
+
     if items[0] == "metal" and items[1] == "metal":
       return "blade"
 
@@ -237,6 +241,10 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return ["energy", "death"]
 
+    x = [{"blade", "human"}]
+    if {items[0],items[1]} in x:
+      return ["blood", "death"]
+
 
     x = [{"life", "time"}]
     if {items[0],items[1]} in x:
@@ -245,6 +253,14 @@ def get_combination(items: list):
     x = [{"human", "time"}, {"death", "philosophy"}, {"death", "human"}]
     if {items[0],items[1]} in x:
       return ["death", "corpse"]
+
+    x = [{"corpse", "energy"}, {"corpse", "life"}]
+    if {items[0],items[1]} in x:
+      return "zombie"
+
+    x = [{"zombie", "human"}]
+    if {items[0],items[1]} in x:
+      return ["zombie", "zombie"]
 
     x = [{"seed", "time"}]
     if {items[0],items[1]} in x:
