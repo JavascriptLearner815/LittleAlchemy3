@@ -230,10 +230,18 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return ["energy", "universe"]
 
+    x = [{"eruption", "philosophy"}]
+    if {items[0],items[1]} in x:
+      return ["energy", "death"]
+
 
     x = [{"life", "time"}]
     if {items[0],items[1]} in x:
-      return ["human", "civilization"]
+      return ["human", "civilization", "death"]
+
+    x = [{"human", "time"}, {"death", "philosophy"}, {"death", "human"}]
+    if {items[0],items[1]} in x:
+      return ["death", "corpse"]
 
     x = [{"seed", "time"}]
     if {items[0],items[1]} in x:
