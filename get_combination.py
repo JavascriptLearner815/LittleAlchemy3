@@ -25,7 +25,8 @@ def get_combination(items: list):
       # return "exosphere"
 
     # if items[0] == "exosphere" and items[1] == "exosphere":
-    if items[0] == "air" and items[1] == "air":
+    x = [{"air", "air"}]
+    if {items[0],items[1]} in x:
       return "atmosphere"
 
     x = [{"earth", "fire"}]
@@ -40,11 +41,13 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "volcano"
 
-    x = [{"volcano", "pressure"}, {"volcano", "energy"}]
+    x = ([
+      {"volcano", "pressure"},
+      {"volcano", "energy"}
+    ])
     if {items[0],items[1]} in x:
-      return ["eruption", "lava", "obsidian"
-      # , "energy"
-      ]
+      return ["eruption", "lava", "obsidian"]
+      # "energy"
 
     x = [{"fire", "air"}]
     if {items[0],items[1]} in x:
@@ -54,7 +57,8 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return ["obsidian", "steam"]
 
-    if items[0] == "fire" and items[1] == "fire":
+    x = [{"fire", "fire"}]
+    if {items[0],items[1]} in x:
       return "heat"
 
     x = [{"sun", "land"}]
@@ -78,45 +82,119 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "sun"
 
-    x = [{"philosophy", "sun"}, {"light", "sun"}]
+    x = ([
+      {"philosophy", "sun"},
+      {"light", "sun"},
+      {"sunrise", "time"}
+    ])
     if {items[0],items[1]} in x:
       return "day"
 
+    x = [{"sun", "opposite"}]
+    if {items[0],items[1]} in x:
+      return "moon"
+
+    x = ([
+      {"moon", "philosophy"},
+      {"moon", "light"},
+      {"moonrise", "time"}
+    ])
+    if {items[0],items[1]} in x:
+      return "night"
+
+    x = [{"night", "time"}]
+    if {items[0],items[1]} in x:
+      return "moonset"
+
+    x = [{"moonset", "time"}]
+    if {items[0],items[1]} in x:
+      return "moonrise"
+
+    x = [{"day", "time"}]
+    if {items[0],items[1]} in x:
+      return "sunset"
+
+    x = [{"sunset", "time"}]
+    if {items[0],items[1]} in x:
+      return "sunrise"
+
+    x = [{"night", "human"}]
+    if {items[0],items[1]} in x:
+      return "chills"
+
+    x = ([
+      {"chills", "time"},
+      {"chills", "philosophy"}
+    ])
+    if {items[0],items[1]} in x:
+      return "cold"
+
+    x = [{"cold", "opposite"}]
+    if {items[0],items[1]} in x:
+      return "hot"
+
+    x = [{"hot", "human"}]
+    if {items[0],items[1]} in x:
+      return "sweat"
+
+    # No, I'm NOT adding it.
+
     
-    if items[0] == "earth" and items[1] == "earth":
+    x = [{"earth", "earth"}]
+    if {items[0],items[1]} in x:
       return "land"
 
-    if items[0] == "land" and items[1] == "land":
+    x = [{"land", "land"}]
+    if {items[0],items[1]} in x:
       return "continent"
 
-    if items[0] == "continent" and items[1] == "continent":
+    x = [{"continent", "continent"}]
+    if {items[0],items[1]} in x:
       return "planet"
 
     x = [{"sun", "planet"}]
     if {items[0],items[1]} in x:
       return "solar system"
 
-    if items[0] == "solar system" and items[1] == "solar system":
+    x = [{"solar system", "solar system"}]
+    if {items[0],items[1]} in x:
       return "galaxy"
 
-    if items[0] == "galaxy" and items[1] == "galaxy":
+    x = [{"galaxy", "galaxy"}]
+    if {items[0],items[1]} in x:
       return "galplex"
 
-    if items[0] == "galplex" and items[1] == "galplex":
+    x = [{"galplex", "galplex"}]
+    if {items[0],items[1]} in x:
       return "galaxy cluster"
 
-    if items[0] == "galaxy cluster" and items[1] == "galaxy cluster":
+    x = [{"galaxy cluster", "galaxy cluster"}]
+    if {items[0],items[1]} in x:
       return "universe"
 
-    if items[0] == "universe" and items[1] == "universe":
+    x = [{"universe", "universe"}]
+    if {items[0],items[1]} in x:
       return "multiverse"
 
-    if items[0] == "multiverse" and items[1] == "multiverse":
+    x = [{"multiverse", "multiverse"}]
+    if {items[0],items[1]} in x:
       return "dark matter"
 
     x = [{"earth", "pressure"}]
     if {items[0],items[1]} in x:
       return "stone"
+
+    x = [{"stone", "stone"}]
+    if {items[0],items[1]} in x:
+      return "wall"
+
+    x = ([
+      {"forest", "civilization"},
+      {"wall", "wall"},
+      {"window", "door"}
+    ])
+    if {items[0],items[1]} in x:
+      return "house"
 
     x = [{"heat", "stone"}]
     if {items[0],items[1]} in x:
@@ -126,14 +204,16 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "rust"
 
-    if items[0] == "metal" and items[1] == "metal":
+    x = [{"metal", "metal"}]
+    if {items[0],items[1]} in x:
       return "blade"
 
     x = [{"earth", "air"}]
     if {items[0],items[1]} in x:
       return "dust"
 
-    if items[0] == "dust" and items[1] == "dust":
+    x = [{"dust", "dust"}]
+    if {items[0],items[1]} in x:
       return "dust bunny"
 
     x = [{"dust bunny", "earth"}]
@@ -160,13 +240,16 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "tree sprout"
 
-    if items[0] == "tree sprout" and items[1] == "tree sprout":
+    x = [{"tree sprout", "tree sprout"}]
+    if {items[0],items[1]} in x:
       return "sapling"
 
-    if items[0] == "sapling" and items[1] == "sapling":
+    x = [{"sapling", "sapling"}]
+    if {items[0],items[1]} in x:
       return "tree growth"
 
-    if items[0] == "tree growth" and items[1] == "tree growth":
+    x = [{"tree growth", "tree growth"}]
+    if {items[0],items[1]} in x:
       return "tree"
 
     x = [{"blade", "tree"}]
@@ -181,7 +264,10 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "book"
 
-    x = [{"book", "day"}, {"egg", "chicken"}]
+    x = ([
+      {"book", "day"},
+      {"egg", "chicken"}
+    ])
     if {items[0],items[1]} in x:
       return "philosophy"
 
@@ -199,29 +285,38 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return "island"
 
-    if items[0] == "water" and items[1] == "water":
+    x = [{"water", "water"}]
+    if {items[0],items[1]} in x:
       return "puddle"
 
-    if items[0] == "puddle" and items[1] == "puddle":
+    x = [{"puddle", "puddle"}]
+    if {items[0],items[1]} in x:
       return "pond"
 
-    if items[0] == "pond" and items[1] == "pond":
+    x = [{"pond", "pond"}]
+    if {items[0],items[1]} in x:
       return "lake"
 
-    if items[0] == "lake" and items[1] == "lake":
+    x = [{"lake", "lake"}]
+    if {items[0],items[1]} in x:
       return "sea"
 
-    if items[0] == "sea" and items[1] == "sea":
+    x = [{"sea", "sea"}]
+    if {items[0],items[1]} in x:
       return "ocean"
 
-    if items[0] == "ocean" and items[1] == "ocean":
+    x = [{"ocean", "ocean"}]
+    if {items[0],items[1]} in x:
       return ["earth's water", "pressure"]
 
     x = [{"earth's water", "atmosphere"}]
     if {items[0],items[1]} in x:
       return "primordial soup"
 
-    x = [{"energy", "primordial soup"}, {"philosophy", "primordial soup"}]
+    x = ([
+      {"energy", "primordial soup"},
+      {"philosophy", "primordial soup"}
+    ])
     if {items[0],items[1]} in x:
       return "life"
 
@@ -250,20 +345,84 @@ def get_combination(items: list):
     if {items[0],items[1]} in x:
       return ["human", "civilization", "death"]
 
-    x = [{"human", "time"}, {"death", "philosophy"}, {"death", "human"}]
+    x = ([
+      {"human", "time"},
+      {"death", "philosophy"},
+      {"death", "human"}
+    ])
     if {items[0],items[1]} in x:
       return ["death", "corpse"]
 
-    x = [{"corpse", "energy"}, {"corpse", "life"}]
+    x = ([
+      {"corpse", "energy"},
+      {"corpse", "life"}
+    ])
     if {items[0],items[1]} in x:
       return "zombie"
 
     x = [{"zombie", "human"}]
     if {items[0],items[1]} in x:
-      return ["zombie", "zombie"]
+      return ["zombie", "zombie", "brain"]
+
+    x = ([
+      {"zombie", "blade"},
+      {"zombie", "death"}
+    ])
+    if {items[0],items[1]} in x:
+      return "dark matter"
+
+    x = ([
+      {"zombie", "philosophy"},
+      {"death", "opposite"}
+    ])
+    if {items[0],items[1]} in x:
+      return "undead"
+
+    x = ([
+      {"undead", "life"},
+      {"undead", "human"},
+      {"undead", "philosophy"}
+    ])
+    if {items[0],items[1]} in x:
+      return ["true immortality", "zombie"]
 
     x = [{"seed", "time"}]
     if {items[0],items[1]} in x:
       return "tree"
+
+    x = [{"blood", "human"}]
+    if {items[0],items[1]} in x:
+      return "vampire"
+
+    x = [{"vampire", "human"}]
+    if {items[0],items[1]} in x:
+      return ["vampire", "vampire", "blood"]
+    
+    x = ([
+      {"big", "small"},
+      {"hot", "cold"}
+    ])
+    if {items[0],items[1]} in x:
+      return "opposite"
+
+    x = [{"life", "opposite"}]
+    if {items[0],items[1]} in x:
+      return "death"
+
+    x = [{"universe", "time"}]
+    if {items[0],items[1]} in x:
+      return "expansion"
+
+    x = [{"universe", "death"}]
+    if {items[0],items[1]} in x:
+      return "compression"
+
+    x = [{"expansion", "philosophy"}]
+    if {items[0],items[1]} in x:
+      return "big"
+
+    x = [{"compression", "philosophy"}]
+    if {items[0],items[1]} in x:
+      return "small"
   else:
     raise ValueError("A combination must be made out of exactly 2 items")
