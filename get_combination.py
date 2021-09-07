@@ -385,7 +385,10 @@ def get_combination(items: list):
         if {items[0],items[1]} in x:
             return "death"
 
-        x = [{"universe", "time"}]
+        x = ([
+            {"universe", "time"},
+            {"universe", "philosophy"}
+        ])
         if {items[0],items[1]} in x:
             return "expansion"
 
