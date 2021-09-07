@@ -25,12 +25,12 @@ def show_prompt():
             items.append(result)
             print(f"That makes {result}. That's a new item!")
     elif isinstance(result, list):
-        for i in range(len(result)):
-            if result[i] in items:
-                print(f"That makes {result[i]}. You've already made that item.")
+        for item in result:
+            if item in items:
+                print(f"That makes {item}. You've already made that item.")
             else:
-                items.append(result[i])
-                print(f"That makes {result[i]}. That's a new item!")
+                items.append(item)
+                print(f"That makes {item}. That's a new item!")
     else:
         raise TypeError("Combination did not create a str or list of item(s)")
 
