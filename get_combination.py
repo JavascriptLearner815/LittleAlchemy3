@@ -226,7 +226,12 @@ def get_combination(items: list):
         if {items[0],items[1]} in x:
             return "tree growth"
 
-        x = [{"tree growth", "tree growth"}]
+        x = ([
+            {"tree growth", "tree growth"},
+            {"seed", "time"},
+            {"seed", "big"},
+            {"plant", "big"}
+        ])
         if {items[0],items[1]} in x:
             return "tree"
 
@@ -357,10 +362,6 @@ def get_combination(items: list):
         ])
         if {items[0],items[1]} in x:
             return ["true immortality", "zombie"]
-
-        x = [{"seed", "time"}]
-        if {items[0],items[1]} in x:
-            return "tree"
 
         x = [{"blood", "human"}]
         if {items[0],items[1]} in x:
