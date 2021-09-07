@@ -32,7 +32,10 @@ def get_combination(items: list):
         if {items[0],items[1]} in x:
             return ["obsidian", "steam"]
 
-        x = [{"fire", "fire"}]
+        x = ([
+            {"fire", "fire"},
+            {"air", "energy"}
+        ])
         if {items[0],items[1]} in x:
             return "heat"
 
