@@ -39,6 +39,10 @@ def get_combination(items: list):
         if {items[0],items[1]} in x:
             return "heat"
 
+        x = [{"heat", "heat"}]
+        if {items[0],items[1]} in x:
+            return "plasma"
+
         x = [{"sun", "land"}]
         if {items[0],items[1]} in x:
             return "light"
@@ -164,6 +168,10 @@ def get_combination(items: list):
         x = [{"earth", "pressure"}]
         if {items[0],items[1]} in x:
             return "stone"
+
+        x = [{"stone", "pressure"}]
+        if {items[0],items[1]} in x:
+            return "granite"
 
         x = [{"stone", "stone"}]
         if {items[0],items[1]} in x:
@@ -332,10 +340,36 @@ def get_combination(items: list):
         if {items[0],items[1]} in x:
             return ["human", "civilization", "death"]
 
+        x = [{"human", "human"}]
+        if {items[0],items[1]} in x:
+            return "love"
+
+        x = [{"primordial soup", "life"}]
+        if {items[0],items[1]} in x:
+            return "bacteria"
+
+        x = [{"bacteria", "water"}]
+        if {items[0],items[1]} in x:
+            return "algae"
+
+        x = [{"human", "bacteria"}]
+        if {items[0],items[1]} in x:
+            return "sickness"
+
+        x = ([
+            {"sickness", "sickness"},
+            {"sickness", "human"}
+        ])
+        if {items[0],items[1]} in x:
+            return ["sickness", "sickness", "death", "corpse"]
+
         x = ([
             {"human", "time"},
             {"death", "philosophy"},
-            {"death", "human"}
+            {"death", "human"},
+            {"human", "calamity"},
+            {"calamity", "philosophy"},
+            {"calamity", "idea"}
         ])
         if {items[0],items[1]} in x:
             return ["death", "corpse"]
@@ -400,8 +434,23 @@ def get_combination(items: list):
         if {items[0],items[1]} in x:
             return "big"
 
+        x = [{"big", "idea"}]
+        if {items[0],items[1]} in x:
+            return "many"
+
         x = [{"compression", "philosophy"}]
         if {items[0],items[1]} in x:
             return "small"
+
+        x = [{"small", "idea"}]
+        if {items[0],items[1]} in x:
+            return "few"
+
+        x = ([
+            {"death", "big"},
+            {"death", "many"}
+        ])
+        if {items[0],items[1]} in x:
+            return "calamity"
     else:
         raise ValueError("A combination must be made out of exactly 2 items")
